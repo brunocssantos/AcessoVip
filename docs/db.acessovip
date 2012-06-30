@@ -1,0 +1,140 @@
+##### Banco de dados-> Tabelas #####################
+
+[usuarios]
+id int auto_increment not null PK
+nome  varchar(30) not null
+sobrenome varchar(30) not null
+login varchar(30) not null
+senha varchar(128) not null
+ativo tinyint(1) not null
+ultimo_login datetime not null
+registrado_em  datetime not null
+
+[grupos]
+id int auto_increment not null PK
+grupo varchar(80) not null
+
+[grupos_permissoes]
+id int auto_increment not null PK
+grupo_id int(11) not null
+permissao_id int(11) not null
+
+[usuarios_permissoes]
+id int auto_increment not null PK
+usuario_id int(11) not null
+grupo_id int(11) not null
+
+[permissoes]
+id int auto_increment not null PK
+descricao varchar(80) not null
+nome varchar(80) not null
+
+
+[eventos]
+id int auto_increment not null PK
+//{analisar}id_criador int not null FK -> eventos_pertence_empresas
+nome varchar(80) not null
+descricao varchar(255) 
+imagem IMG 
+template varchar(150) not null
+registrado_em datetime not null
+local varchar(255) not null
+endereco varchar(255) not null
+numero int(11) not null
+complemento varchar(255) 
+bairro varchar(255) not null
+cidade varchar(255) not null
+estado varchar(150) not null
+cep int(8) 
+tipo_evento varchar(100) not null // Publico ou Privado
+status boolean not null // ativo/ não ativo
+maximo_pessoas varchar(11) not null
+data_inicio datetime not null
+data_fim datetime not null
+
+[eventos_pertence_empresas]
+id int auto_increment not null PK
+id_evento int(11) not null FK-> id - eventos
+id_empresa int(11) not null FK-> empresas - id
+
+[empresas]
+id int auto_increment not null PK
+//{analisar}id_usuario int not null FK -> acessoempresa_pertence_usuarios
+nome varchar(80) not null
+CNPJ_CPF int(15) not null
+email varchar(255) not null
+site varchar(255) 
+status boolean not null // empresa ativa / não ativa
+
+[acessoempresa_pertence_usuarios]
+id int auto_increment not null PK
+id_empresa int(11) not null FK -> id - empresas
+id_usuario int(11) not null FK -> id - usuarios
+
+[contatos]
+id int auto_increment not null PK
+id_contato int not null FK -> contatos_pertence_contato
+telefone int(11) not null
+
+[contatos_pertence_contato]
+id int auto_increment not null PK
+id_contato int(11) not null FK -> empresas, clientes
+id_contatos int(11) not null FK -> id - contatos
+
+[empresasdadosbancarios]
+id int auto_increment not null PK
+//{analisar}id_empresa int(11) not null FK -> contaempresa_pertence_empresa
+agencia int(10) not null
+conta int(20) not null
+digito int(2) not null
+status boolean not null // conta ativa ou não
+criado_em datetime not null
+
+[contaempresa_pertence_empresa]
+id int auto_increment not null PK
+id_empresa int(11) not null FK -> id - empresas
+id_conta int(11) not null FK -> id - empresasdadosbancarios
+
+[clientes]
+id int auto_increment not null PK
+id_usuario int(11) not null
+nome varchar(120) not null
+sobrenome varchar(120) not null
+email varchar(255) not null
+endereco varchar(255)
+numero int(11)
+complemento varchar(150)
+bairro varchar(150)
+cidade varchar(255)
+estado varchar(120)
+
+
+[clientesdadosbancarios]
+id int auto_increment not null PK
+//{analisar}id_empresa int(11) not null FK -> contacliente_pertence_cliente
+agencia int(10) not null
+conta int(20) not null
+digito int(2) not null
+status boolean not null // conta ativa ou não
+criado_em datetime not null
+
+[contacliente_pertence_cliente]
+id int auto_increment not null PK
+id_cliente int(11) not null FK -> clientes
+id_conta int(11) not null FK -> clientesdadosbancarios
+
+	
+[creditocliente]
+id int auto_increment not null PK
+id_cliente int(11) not null 
+cartao int(20) not null
+codigo_seguranca int(3) not null
+validade varchar(5) not null
+nome_titular (255) not null
+status boolean not null
+
+[creditocliente_pertence_clientes]
+id int auto_increment not null PK
+id_cliente int(11) not null FK -> id - clientes
+id_cartao int(11) not null FK -> id  - creditocliente
+
