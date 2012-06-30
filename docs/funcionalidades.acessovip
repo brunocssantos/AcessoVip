@@ -1,0 +1,54 @@
+###### Site->Funcionalidades #############
+
+index-> login, cadastro, mod_ultimos-eventos, mod_parceiros, mod_patrocinio, mod_descricao.
+
+home[clientes]->visualizar perfil empresas & outros clientes, visualizar evento(jquery->tickbox), 
+mod_comprar-ingresso, mod_compartilhar(facebook,twitter,G+), mod_buscar-evento-pessoas,mod_convidar-amigos,mod_buyCash
+
+mod_votar-casa-de-show, mod_nota-evento, mod_comentario-evento, mod_menu.
+
+home[empresas]->alterar/costumizar perfil, mod_cadastrar-evento, mod_email-marketing,
+ mod_grafico-de-popularidade, mod_criar-campanha, mod_criar-evento, mod_convidar-pessoas, mod_menu
+
+
+############ Descricao dos Modulos #########
+
+mod_ultimos-eventos: Exibe os ultimos eventos cadastrados. A exibicao e randomica para eventos proximos;
+
+mod_parceiros: Exibe parceiros do site;
+
+mod_patrocinio: Exibe patrocinadores, esta ligado ao mod_campanha;
+
+mod_descricao: exibe descricao sobre o site;
+
+
+mod_comprar-ingresso: disponibiliza ao usuario uma interface para compra de intressos, a mesma e integrada com o moip.
+
+mod_compartilhar: exibe botoes de redes sociais para compartilhamento dos perfils e publicacoes das empresas.
+
+mod_buscar-evento-pessoas: modulo de busca que pesquisa por eventos e outros usuarios.
+
+mod_convidar-amigos: modulo no perfil do usuario, que permite enviar convites para amigos atraves de sua propria conta de email.
+
+mod_buyCash: permite ao cliente comprar um voucher para poder gastar no dia do evento.
+
+mod_votar_casa-de-show: exibe um sistema de votacao para as empresas organizadoras do evento.
+
+mod_nota-evento: exibe um sistema de votacao para o evento.
+
+mod_comentario-evento: possibilita aos clientes, efetuarem comentarios sobre o evento.
+
+mod_menu: Exibe o menu de clientes e empresas.
+
+
+mod_cadastrar-evento: modulo que permite empresas cadastrarem seus eventos.
+
+mod_email-marketing: ferramenta para email marketing;
+
+mod_grafico-de-popularidade: exibe para empresas, um relatorio em forma de gráficos com base nos dados de votacao dos eventos e das casas de show;
+
+mod_criar-campanha: ferramenta que permite a criação de campanhas, tornando automanticamente a empresa uma patrocinadora do sistema;
+
+mod_convidar-pessoas: ferramente para convidar pessoas que já participaram de outros eventos da empresa.
+
+

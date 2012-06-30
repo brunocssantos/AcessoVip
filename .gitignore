@@ -1,0 +1,17 @@
+/app/bootstrap.php.cache
+/app/cache/*
+/app/logs/*
+/app/db/*
+/app/repos
+/app/data
+/web/bundles/*
+/vendor/*
+/app/config/parameters.yml
+/app/config/parameters.*.yml
+composer.phar
+bin/*
+build
+behat.yml
+.buildpath
+.project
+.settings
